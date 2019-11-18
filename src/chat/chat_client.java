@@ -50,6 +50,12 @@ public class chat_client extends javax.swing.JFrame {
         msg_area.setRows(5);
         jScrollPane1.setViewportView(msg_area);
 
+        msg_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                msg_textActionPerformed(evt);
+            }
+        });
+
         msg_send.setText("send");
         msg_send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +112,10 @@ public class chat_client extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_msg_sendActionPerformed
 
+    private void msg_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msg_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_msg_textActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -139,7 +149,7 @@ public class chat_client extends javax.swing.JFrame {
                 new chat_client().setVisible(true);
             }
         });
-                try{
+        try{
         String msgin="";
         s=new Socket("127.0.0.1",1201);//ip address is of localhost beacuse server is running on the same machine ,second is port
         dis=new DataInputStream(s.getInputStream());//We will receive the input stream
